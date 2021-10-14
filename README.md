@@ -30,13 +30,13 @@ De validator zal zowel een boolean teruggeven, als een errormessage wanneer het 
 
 # Files structuur
 
-Naast de index.js waar de validator, schemas en input objecten geimporteert zijn, is er een validator.js en een errormessage.js. Ik heb er voor gekozen om de errormessage functie te exporteren naar de validator.js om de validator.js overzichtelijker te houden.
+Naast de index.js waar de validator, schemas en input objecten geimporteert zijn, is er een validator.js en een errorMessage.js. Ik heb er voor gekozen om de errorMessage functie te exporteren naar de validator.js om de validator.js overzichtelijker te houden.
 
 Voor het nakijk gemak heb ik er voor gekozen de gehele validator functie te importeren naar de index.js, zodat de index.js zelf zo kort mogelijk is en je gemakkelijk de inputs kunt veranderen.
 
 # Sidenote over implementatie
 
-Hoewel er niet expliciet is gevraagd om een errormessage vanuit de validator, vond ik de volgende context daarvoor voldoende om dat toch te doen: 'De hoop is dat een object validator kan helpen met het sneller inzichtelijk maken van foutieve API responses of breaking changes.'.
+Hoewel er niet expliciet is gevraagd om een errorMessage vanuit de validator, vond ik de volgende context daarvoor voldoende om dat toch te doen: 'De hoop is dat een object validator kan helpen met het sneller inzichtelijk maken van foutieve API responses of breaking changes.'.
 
 In de praktijk zal ik uiteraard altijd verifieren of dit nodig is.
 
