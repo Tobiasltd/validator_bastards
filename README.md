@@ -42,6 +42,4 @@ In de praktijk zal ik uiteraard altijd verifieren of dit nodig is.
 
 # Sidenotes over de code
 
-In de compareObjTypesToSchema functie in validator.js (lijn 17), staat nu een if, else if, else functie. Ik vind dit leesbaarder dan een korte switch statement. Mochten de requirements later uitbreiden, zoals wanneer bijvoorbeeld null type of functies gecheckt moeten worden, dan zou ik wel een switch statement gebruiken.
-
 Een laatste opmerking is dat op dit moment de logValidationError functie in errorMessage.js (lijn 1) geen return message heeft, maar slechts iets logt op de console. In de praktijk zou deze message niet gelogt worden maar zijn weg naar de gebruiker vinden.

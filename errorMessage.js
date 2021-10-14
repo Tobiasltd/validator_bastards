@@ -26,6 +26,4 @@ const appendKeysToErrorMessage = (invalidKeyArray) => {
   return appendingKeyString;
 };
 
-const lastKeyInArray = (array, i) => {
-  return i + 1 === array.length;
-};
+const lastKeyInArray = (array, i) => i + 1 === array.length;

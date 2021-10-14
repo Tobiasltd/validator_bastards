@@ -21,18 +21,22 @@ const compareObjTypesToSchema = (
   objToCompare
 ) => {
   Object.keys(schema).forEach((key) => {
-    if (schema[key] === "object") {
-      compareObjectType(missingKeys, wrongTypeKeys, key, objToCompare);
-    } else if (schema[key] === "array") {
-      compareArrayType(missingKeys, wrongTypeKeys, key, objToCompare);
-    } else {
-      comparePrimitiveTypes(
-        missingKeys,
-        wrongTypeKeys,
-        schema,
-        key,
-        objToCompare
-      );
+    switch (schema[key]) {
+      case "object":
+        compareObjectType(missingKeys, wrongTypeKeys, key, objToCompare);
+        break;
+      case "array":
+        compareArrayType(missingKeys, wrongTypeKeys, key, objToCompare);
+        break;
+      default:
+        comparePrimitiveTypes(
+          missingKeys,
+          wrongTypeKeys,
+          schema,
+          key,
+          objToCompare
+        );
+        break;
     }
   });
 };
@@ -71,6 +75,5 @@ const pushKeyToInvalidKeyArrays = (
   }
 };
 
-const thereAreInvalidKeys = (wrongTypeKeys, missingKeys) => {
-  return wrongTypeKeys.length > 0 || missingKeys.length > 0;
-};
+const thereAreInvalidKeys = (wrongTypeKeys, missingKeys) =>
+  wrongTypeKeys.length > 0 || missingKeys.length > 0;
